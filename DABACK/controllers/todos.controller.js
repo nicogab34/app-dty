@@ -37,6 +37,8 @@ exports.createTodo = async function(req, res, next){
 
     // Req.Body contains the form submit values.
 
+    console.log("t2");
+
     var todo = {
         date: req.body.date,
         intitule: req.body.intitule,
@@ -44,6 +46,7 @@ exports.createTodo = async function(req, res, next){
         devise: req.body.devise,
         commentaire: req.body.commentaire,
         emetteur: req.body.emetteur,
+        emetteurID: req.body.emetteurID,
         gestionnaire: req.body.gestionnaire,
         etat: req.body.etat,
         commentairegestion: req.body.commentairegestion,
@@ -59,7 +62,7 @@ exports.createTodo = async function(req, res, next){
     }catch(e){
         
         //Return an Error Response Message with Code and the Error Message.
-        
+        console.log("crash");
         return res.status(400).json({status: 400, message: "Todo Creation was Unsuccesfull"})
     }
 }
@@ -84,6 +87,7 @@ exports.updateTodo = async function(req, res, next){
         devise: req.body.devise ? req.body.devise : null,
         commentaire: req.body.commentaire ? req.body.commentaire : null,
         emetteur: req.body.emetteur ? req.body.emetteur : null,
+        emetteurID: req.body.emetteurID ? req.body.emetteurID : null,
         gestionnaire: req.body.gestionnaire ? req.body.gestionnaire : null,
         etat: req.body.etat ? req.body.etat : null,
         commentairegestion: req.body.commentairegestion ? req.body.commentairegestion : null,

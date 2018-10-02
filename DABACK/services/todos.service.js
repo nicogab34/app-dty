@@ -38,6 +38,7 @@ exports.createTodo = async function(todo){
         devise: todo.devise,
         commentaire: todo.commentaire,
         emetteur: todo.emetteur,
+        emetteurID: todo.emetteurID,
         gestionnaire: todo.gestionnaire,
         etat: todo.etat,
         commentairegestion: todo.commentairegestion,
