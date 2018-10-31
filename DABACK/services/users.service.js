@@ -14,9 +14,9 @@ exports.getUsers = async function(query, page, limit){
     }
     
     // Try Catch the awaited promise to handle the error 
-    
+
     try {
-        var users = await User.paginate(query, options)
+        var users = await User.paginate(query, options);
         
         // Return the todod list that was retured by the mongoose promise
         return users;
